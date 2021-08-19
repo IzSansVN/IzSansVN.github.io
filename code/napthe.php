@@ -93,6 +93,40 @@ require("Iz_Index/head.php");
             <i>Bấm vào đây để gửi thẻ : </i>
             <br />
             <button type="submit" name="submit" id="btn-gui-the">Gửi thẻ</button>
+            <br />
+            <br />
+            <br />
+            <b style="color:red;">Lịch sử gửi thẻ</b>
+            <br />
+            <br />
+            <table class="table table-hover">
+   <tr>
+	   <th>STT - </th>
+	   <th>Tên - </th>
+	   <!--<th>Mã Thẻ</th>-->
+	    <!--<th>Serial Thẻ</th>-->
+	   <th>Mệnh giá - </th>
+	    <th>Loại thẻ - </th>
+	   <th>Tình Trạng </th>
+   </tr>
+<tbody>
+<?php
+include 'Iz_Shower/db-config.php'; 
+$getloaithe = array('Viettel','Vinaphone','Mobifone', 'VietnamMobile', 'Garena');
+$TOM_result = mysql_query("SELECT * FROM `gachthe` WHERE `id` ORDER by id DESC LIMIT $start, $kmess");
+while($gettom = mysql_fetch_assoc($TOM_result)){ ?>
+<tr>
+   <th scope="row">#<?php echo $gettom['id']; ?> </th>
+   <th> <?php echo $gettom['uid']; ?> </th>
+   <!--<td>< ?php echo $gettom['code']; ?></td>
+   <!--<td>< ?php echo $gettom['serial']; ?></td>-->
+   <td> <?php echo number_format($gettom['menhgia']); ?> <sup>VNĐ </sup></td>
+   <td> <?php echo $getloaithe[$gettom['loaithe']]; ?> </td>
+   <td> <?php echo $gettom['tinhtrang']; ?> </td>
+</tr>                 
+<?php }?>
+</tbody>
+</table>
         </form>
     </div>
     <br />
