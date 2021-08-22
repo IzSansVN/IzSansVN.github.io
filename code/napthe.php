@@ -46,6 +46,10 @@ if(isset($_POST['submit'])) {
 <?php
 require("Iz_Index/head.php");
 ?>
+<style>
+    #btn-gui-the:hover {background: gray;color: white;border: 1px solid black;} /* Hiệu ứng Hover */
+    #btn-gui-the:active {background: yellow;color: green;} /* Hiệu ứng Active */
+</style>
 <center>
     <br />
     <p id="all-p-card">- CONTENT -</p>
@@ -61,11 +65,11 @@ require("Iz_Index/head.php");
             <label for="card_type">Loại thẻ :</label>
             <br />
             <select name="card_type">
-              <option value="Viettel">Viettel</option>
-              <option value="Vinaphone">Vinaphone</option>
-              <option value="Mobifone">Mobifone</option>
-              <option value="VietnamMobile">VietnamMobile</option>
-              <option value="Garena">Garena (Không nhận)</option>
+              <option value="0">Viettel</option>
+              <option value="1">Vinaphone</option>
+              <option value="2">Mobifone</option>
+              <option value="3">VietnamMobile</option>
+              <option value="4">Garena (Không nhận)</option>
             </select>
             <br />
             <label for="card_amount">Mệnh giá :</label>
@@ -101,13 +105,13 @@ require("Iz_Index/head.php");
             <br />
             <table class="table table-hover">
    <tr>
-	   <th>STT - </th>
-	   <th>Tên - </th>
+	   <th> STT </th>
+	   <th> Tên </th>
 	   <!--<th>Mã Thẻ</th>-->
 	    <!--<th>Serial Thẻ</th>-->
-	   <th>Mệnh giá - </th>
-	    <th>Loại thẻ - </th>
-	   <th>Tình Trạng </th>
+	   <th> Mệnh giá </th>
+	    <th> Loại thẻ </th>
+	   <th> Tình Trạng </th>
    </tr>
 <tbody>
 <?php
