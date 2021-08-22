@@ -4,23 +4,23 @@ if (isset($_POST['admin_username'])) {
 $admin_username = $_POST['admin_username'];
 $admin_password = $_POST['admin_password'];
 
-echo "<script> alert('Sai tài khoản hoặc Chưa nhập đầy đủ thông tin'); </script>";
+echo "<script> alert('Sai tài khoản'); </script>";
 if ($admin_username == $admin_user and $admin_password == $admin_pass) {
     header("Location: ./duyet-the.html");
+    
 }
-// if ($admin_username == $admin_user || $admin_password == $admin_pass) {
-//    header("Location: ./duyet-the.php");
-// }
-// if (!isset($_POST['admin_username']) || !isset($_POST['admin_password'])){
-//    echo "<script> alert('Cần nhập đầy đủ thông tin !'); </script>";
-// }
 }
+
 ?>
 <!DOCTYPE html>
 <html>
     <head>
         <title>Đăng Nhập Admin</title>
         <link type="text/css" rel="stylesheet" href="./css/login.css" />
+        <style>
+            .login-border button:hover {background: gray;color:white;}
+            .login-border button:active {background: red;color:black;}
+        </style>
     </head>
     <body>
         <h1 id="admin-login-title">ĐĂNG NHẬP ADMIN</h1>
